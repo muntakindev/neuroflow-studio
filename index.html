@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NeuroFlow AI — Automate your business workflows with next-generation artificial intelligence. Trusted by 500+ enterprises worldwide." />
+  <title>NeuroFlow AI — Next-Gen Business Automation</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Ambient background canvas -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- =============================================
+       NAVIGATION
+  ============================================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M2 17l10 5 10-5" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M2 12l10 5 10-5" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#a78bfa"/>
+                <stop offset="100%" stop-color="#22d3ee"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">NeuroFlow <span class="logo-ai">AI</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="#" class="btn-ghost">Sign In</a>
+        <a href="#" class="btn-primary glow-btn">Get Started</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =============================================
+         HERO SECTION
+    ============================================== -->
+    <section class="hero" id="home">
+
+      <!-- Floating orbs -->
+      <div class="orb orb-purple"></div>
+      <div class="orb orb-cyan"></div>
+      <div class="orb orb-blue"></div>
+
+      <!-- Particle layer -->
+      <div class="particles" id="particles"></div>
+
+      <div class="hero-inner">
+
+        <!-- Left: Text content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Now with GPT-5 integration — learn more →</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Automate Your Business With
+            <span class="gradient-text">Next-Gen AI</span>
+          </h1>
+
+          <p class="hero-sub">
+            NeuroFlow AI transforms how enterprises operate — automating complex workflows, predicting outcomes, and scaling intelligence across every team in real time.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#" class="btn-primary glow-btn large-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              Start Free Trial
+            </a>
+            <a href="#" class="btn-outline large-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              Watch Demo
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num">500+</span>
+              <span class="stat-label">Enterprises</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num">99.9%</span>
+              <span class="stat-label">Uptime SLA</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num">4.2×</span>
+              <span class="stat-label">Productivity</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Dashboard mockup -->
+        <div class="hero-visual">
+          <div class="dashboard-container">
+
+            <!-- Main dashboard window -->
+            <div class="dashboard-card main-dash">
+              <div class="dash-header">
+                <div class="dash-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <span class="dash-title">NeuroFlow Dashboard</span>
+                <div class="dash-status">
+                  <span class="pulse-dot"></span> Live
+                </div>
+              </div>
+
+              <div class="dash-body">
+
+                <!-- Metrics row -->
+                <div class="metrics-row">
+                  <div class="metric-card">
+                    <span class="metric-label">AI Tasks</span>
+                    <span class="metric-val">12,847</span>
+                    <span class="metric-change positive">↑ 24%</span>
+                  </div>
+                  <div class="metric-card">
+                    <span class="metric-label">Saved Hours</span>
+                    <span class="metric-val">3,420</span>
+                    <span class="metric-change positive">↑ 18%</span>
+                  </div>
+                  <div class="metric-card">
+                    <span class="metric-label">Accuracy</span>
+                    <span class="metric-val">98.7%</span>
+                    <span class="metric-change positive">↑ 2.1%</span>
+                  </div>
+                </div>
+
+                <!-- Chart area -->
+                <div class="chart-area">
+                  <div class="chart-label">Automation Performance</div>
+                  <svg class="line-chart" viewBox="0 0 380 100" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#7c3aed"/>
+                        <stop offset="100%" stop-color="#22d3ee"/>
+                      </linearGradient>
+                    </defs>
+                    <path class="chart-fill" d="M0,80 C30,70 60,60 90,45 C120,30 150,55 180,40 C210,25 240,30 270,20 C300,10 330,15 380,8 L380,100 L0,100 Z" fill="url(#chartGrad)"/>
+                    <path class="chart-line" d="M0,80 C30,70 60,60 90,45 C120,30 150,55 180,40 C210,25 240,30 270,20 C300,10 330,15 380,8" fill="none" stroke="url(#lineGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+
+                <!-- Bottom row -->
+                <div class="dash-bottom">
+                  <div class="ai-status-panel">
+                    <span class="panel-title">AI Agents Active</span>
+                    <div class="agent-list">
+                      <div class="agent-item">
+                        <span class="agent-dot cyan"></span>
+                        <span>DataFlow Agent</span>
+                        <span class="agent-pct">94%</span>
+                      </div>
+                      <div class="agent-item">
+                        <span class="agent-dot purple"></span>
+                        <span>Report Agent</span>
+                        <span class="agent-pct">87%</span>
+                      </div>
+                      <div class="agent-item">
+                        <span class="agent-dot blue"></span>
+                        <span>Support Agent</span>
+                        <span class="agent-pct">100%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mini-bars">
+                    <span class="bar-title">Weekly Load</span>
+                    <div class="bars">
+                      <div class="bar" style="--h:40%"></div>
+                      <div class="bar" style="--h:65%"></div>
+                      <div class="bar" style="--h:55%"></div>
+                      <div class="bar" style="--h:80%"></div>
+                      <div class="bar" style="--h:70%"></div>
+                      <div class="bar" style="--h:90%"></div>
+                      <div class="bar active" style="--h:85%"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Floating info cards -->
+            <div class="float-card card-top-right">
+              <div class="float-icon">🤖</div>
+              <div>
+                <div class="float-title">AI Suggestion</div>
+                <div class="float-desc">Optimize pipeline #34 →</div>
+              </div>
+            </div>
+
+            <div class="float-card card-bottom-left">
+              <div class="float-icon">⚡</div>
+              <div>
+                <div class="float-title">Automation fired</div>
+                <div class="float-desc">Report auto-generated</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================
+         TRUSTED BY
+    ============================================== -->
+    <section class="trusted-by reveal">
+      <div class="container">
+        <p class="trusted-label">Trusted by teams at world-class companies</p>
+        <div class="logos-track">
+          <div class="logos-inner" id="logosInner">
+            <span class="company-logo">Quantum Labs</span>
+            <span class="company-logo">NovaTech</span>
+            <span class="company-logo">Archeus</span>
+            <span class="company-logo">DataSphere</span>
+            <span class="company-logo">CortexOS</span>
+            <span class="company-logo">Vantage AI</span>
+            <span class="company-logo">Prism Systems</span>
+            <span class="company-logo">Echo Finance</span>
+            <!-- duplicated for seamless loop -->
+            <span class="company-logo">Quantum Labs</span>
+            <span class="company-logo">NovaTech</span>
+            <span class="company-logo">Archeus</span>
+            <span class="company-logo">DataSphere</span>
+            <span class="company-logo">CortexOS</span>
+            <span class="company-logo">Vantage AI</span>
+            <span class="company-logo">Prism Systems</span>
+            <span class="company-logo">Echo Finance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         FEATURES SECTION
+    ============================================== -->
+    <section class="features section-gap" id="features">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-badge">Core Capabilities</div>
+          <h2 class="section-title">Everything you need to <span class="gradient-text">run smarter</span></h2>
+          <p class="section-sub">Six powerful modules. One unified AI platform built for enterprise scale and precision.</p>
+        </div>
+
+        <div class="features-grid">
+
+          <div class="feature-card reveal" data-delay="0">
+            <div class="feature-icon-wrap" style="--icon-color: #7c3aed">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>AI Workflow Automation</h3>
+            <p>Design, deploy and monitor end-to-end business workflows powered by reinforcement-learning agents that adapt in real time.</p>
+            <a href="#" class="feature-link">Explore →</a>
+            <div class="card-glow"></div>
+          </div>
+
+          <div class="feature-card reveal" data-delay="80">
+            <div class="feature-icon-wrap" style="--icon-color: #06b6d4">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Predictive Analytics</h3>
+            <p>Surface hidden patterns in your data with transformer-based forecasting models that predict demand, churn, and anomalies weeks ahead.</p>
+            <a href="#" class="feature-link">Explore →</a>
+            <div class="card-glow"></div>
+          </div>
+
+          <div class="feature-card reveal" data-delay="160">
+            <div class="feature-icon-wrap" style="--icon-color: #2563eb">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Smart Team Collaboration</h3>
+            <p>AI-assisted project rooms with intelligent summaries, auto-assigned tasks, and real-time translation across 40+ languages.</p>
+            <a href="#" class="feature-link">Explore →</a>
+            <div class="card-glow"></div>
+          </div>
+
+          <div class="feature-card reveal" data-delay="0">
+            <div class="feature-icon-wrap" style="--icon-color: #f59e0b">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3>AI Report Generator</h3>
+            <p>Publish board-ready reports in seconds. Connect your data sources and let NeuroFlow compile, analyze, and narrate every insight.</p>
+            <a href="#" class="feature-link">Explore →</a>
+            <div class="card-glow"></div>
+          </div>
+
+          <div class="feature-card reveal" data-delay="80">
+            <div class="feature-icon-wrap" style="--icon-color: #10b981">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3>Real-Time Monitoring</h3>
+            <p>Zero-lag observability across all your infrastructure, pipelines, and AI agents — with intelligent alerting that cuts through noise.</p>
+            <a href="#" class="feature-link">Explore →</a>
+            <div class="card-glow"></div>
+          </div>
+
+          <div class="feature-card reveal" data-delay="160">
+            <div class="feature-icon-wrap" style="--icon-color: #ec4899">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3>Enterprise Cloud Security</h3>
+            <p>SOC 2 Type II certified. End-to-end encryption, zero-trust architecture, and AI-driven threat detection that works 24/7.</p>
+            <a href="#" class="feature-link">Explore →</a>
+            <div class="card-glow"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         DASHBOARD PREVIEW
+    ============================================== -->
+    <section class="dashboard-section section-gap reveal" id="dashboard">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Platform Preview</div>
+          <h2 class="section-title">A command center for <span class="gradient-text">your entire operation</span></h2>
+          <p class="section-sub">One unified workspace. Every metric, workflow, and AI agent — visible at a glance.</p>
+        </div>
+
+        <div class="full-dashboard">
+
+          <!-- Left sidebar -->
+          <div class="fd-sidebar">
+            <div class="fd-nav-item active">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              Dashboard
+            </div>
+            <div class="fd-nav-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              Workflows
+            </div>
+            <div class="fd-nav-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Analytics
+            </div>
+            <div class="fd-nav-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Teams
+            </div>
+            <div class="fd-nav-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Security
+            </div>
+            <div class="fd-nav-sep"></div>
+            <div class="fd-nav-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+              Settings
+            </div>
+          </div>
+
+          <!-- Main panel -->
+          <div class="fd-main">
+
+            <!-- Top metrics -->
+            <div class="fd-metrics">
+              <div class="fd-metric">
+                <div class="fdm-label">Total Automations</div>
+                <div class="fdm-value">48,291</div>
+                <div class="fdm-change up">+12.4% this week</div>
+              </div>
+              <div class="fd-metric">
+                <div class="fdm-label">Active Agents</div>
+                <div class="fdm-value">24</div>
+                <div class="fdm-change up">+3 deployed today</div>
+              </div>
+              <div class="fd-metric">
+                <div class="fdm-label">Hours Saved</div>
+                <div class="fdm-value">9,814</div>
+                <div class="fdm-change up">+8.7% this month</div>
+              </div>
+              <div class="fd-metric">
+                <div class="fdm-label">Error Rate</div>
+                <div class="fdm-value">0.02%</div>
+                <div class="fdm-change up">↓ Improved</div>
+              </div>
+            </div>
+
+            <!-- Chart + tasks row -->
+            <div class="fd-row">
+
+              <div class="fd-chart-box">
+                <div class="fd-chart-header">
+                  <span>Revenue Impact</span>
+                  <div class="fd-chart-tabs">
+                    <span class="active">7D</span>
+                    <span>30D</span>
+                    <span>90D</span>
+                  </div>
+                </div>
+                <svg class="fd-chart" viewBox="0 0 420 120" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="fdFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,100 C40,85 80,70 120,55 C160,40 200,65 240,48 C280,30 320,35 360,20 C380,14 400,10 420,5 L420,120 L0,120 Z" fill="url(#fdFill)"/>
+                  <path d="M0,100 C40,85 80,70 120,55 C160,40 200,65 240,48 C280,30 320,35 360,20 C380,14 400,10 420,5" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/>
+                  <!-- Data points -->
+                  <circle cx="120" cy="55" r="4" fill="#06b6d4"/>
+                  <circle cx="240" cy="48" r="4" fill="#06b6d4"/>
+                  <circle cx="360" cy="20" r="4" fill="#06b6d4"/>
+                </svg>
+              </div>
+
+              <div class="fd-tasks-box">
+                <div class="fd-box-title">Active Tasks</div>
+                <div class="fd-task-item">
+                  <span class="task-status done"></span>
+                  <span class="task-name">Q3 Report Generation</span>
+                  <span class="task-tag green">Done</span>
+                </div>
+                <div class="fd-task-item">
+                  <span class="task-status running"></span>
+                  <span class="task-name">Lead Scoring Pipeline</span>
+                  <span class="task-tag cyan">Running</span>
+                </div>
+                <div class="fd-task-item">
+                  <span class="task-status pending"></span>
+                  <span class="task-name">Budget Forecast Model</span>
+                  <span class="task-tag yellow">Pending</span>
+                </div>
+                <div class="fd-task-item">
+                  <span class="task-status running"></span>
+                  <span class="task-name">Customer Churn Alert</span>
+                  <span class="task-tag cyan">Running</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- AI insights row -->
+            <div class="fd-insights">
+              <div class="fd-insight-header">
+                <span>🧠 AI Insights</span>
+                <span class="insight-new">3 new</span>
+              </div>
+              <div class="fd-insight-list">
+                <div class="fd-insight-item">Conversion rate likely to drop 12% next week — activate retargeting flow?</div>
+                <div class="fd-insight-item">Support ticket volume trending +34%. Auto-scale agent pool recommended.</div>
+                <div class="fd-insight-item">Pipeline #7 is 2.3× faster than benchmark. Apply pattern to #12 and #15?</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         HOW IT WORKS
+    ============================================== -->
+    <section class="how-it-works section-gap" id="how">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-badge">Process</div>
+          <h2 class="section-title">Up and running in <span class="gradient-text">three steps</span></h2>
+          <p class="section-sub">No complex migrations. No months-long onboarding. Just results from day one.</p>
+        </div>
+
+        <div class="steps-row">
+
+          <div class="step-card reveal" data-delay="0">
+            <div class="step-num">01</div>
+            <div class="step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#sg1)" stroke-width="1.5">
+                <defs><linearGradient id="sg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3>Connect Your Apps</h3>
+            <p>Integrate with 200+ tools in minutes using our visual connector. Slack, Salesforce, Notion, PostgreSQL — if you use it, we support it.</p>
+          </div>
+
+          <div class="step-connector reveal" data-delay="80">
+            <div class="connector-line"></div>
+            <div class="connector-pulse"></div>
+          </div>
+
+          <div class="step-card reveal" data-delay="160">
+            <div class="step-num">02</div>
+            <div class="step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#sg2)" stroke-width="1.5">
+                <defs><linearGradient id="sg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs>
+                <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+              </svg>
+            </div>
+            <h3>Train Your AI System</h3>
+            <p>Feed NeuroFlow your historical data. Our models learn your business logic, terminology, and goals — no data scientists required.</p>
+          </div>
+
+          <div class="step-connector reveal" data-delay="240">
+            <div class="connector-line"></div>
+            <div class="connector-pulse"></div>
+          </div>
+
+          <div class="step-card reveal" data-delay="320">
+            <div class="step-num">03</div>
+            <div class="step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#sg3)" stroke-width="1.5">
+                <defs><linearGradient id="sg3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <h3>Scale Automatically</h3>
+            <p>NeuroFlow adapts as your business grows. Infrastructure scales on demand, agents multiply, and ROI compounds — hands-free.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         AI SOLUTIONS
+    ============================================== -->
+    <section class="solutions section-gap" id="solutions">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-badge">Solutions</div>
+          <h2 class="section-title">Built for every <span class="gradient-text">industry</span></h2>
+          <p class="section-sub">Purpose-built AI models trained on industry-specific data — not generic tools repurposed for your vertical.</p>
+        </div>
+
+        <div class="solutions-grid">
+
+          <div class="solution-card reveal tilt-card" data-delay="0" style="--glow: #06b6d4">
+            <div class="sol-icon">🏥</div>
+            <h3>Healthcare AI</h3>
+            <p>Clinical workflow automation, patient data analysis, and predictive diagnostics — HIPAA compliant from day one.</p>
+            <div class="sol-tag">Learn more →</div>
+            <div class="sol-glow"></div>
+          </div>
+
+          <div class="solution-card reveal tilt-card" data-delay="80" style="--glow: #7c3aed">
+            <div class="sol-icon">📈</div>
+            <h3>Finance AI</h3>
+            <p>Real-time fraud detection, algorithmic risk modeling, and automated compliance reporting across global markets.</p>
+            <div class="sol-tag">Learn more →</div>
+            <div class="sol-glow"></div>
+          </div>
+
+          <div class="solution-card reveal tilt-card" data-delay="160" style="--glow: #f59e0b">
+            <div class="sol-icon">🛍️</div>
+            <h3>Ecommerce AI</h3>
+            <p>Hyper-personalized recommendations, dynamic pricing engines, and inventory forecasting that adapts to every market signal.</p>
+            <div class="sol-tag">Learn more →</div>
+            <div class="sol-glow"></div>
+          </div>
+
+          <div class="solution-card reveal tilt-card" data-delay="0" style="--glow: #ec4899">
+            <div class="sol-icon">📣</div>
+            <h3>Marketing Automation</h3>
+            <p>AI-generated campaigns, audience segmentation, multi-channel orchestration, and real-time attribution modeling.</p>
+            <div class="sol-tag">Learn more →</div>
+            <div class="sol-glow"></div>
+          </div>
+
+          <div class="solution-card reveal tilt-card" data-delay="80" style="--glow: #10b981">
+            <div class="sol-icon">💬</div>
+            <h3>Customer Support AI</h3>
+            <p>Autonomous support agents that handle 80% of tickets on first contact — with seamless human escalation and full audit trails.</p>
+            <div class="sol-tag">Learn more →</div>
+            <div class="sol-glow"></div>
+          </div>
+
+          <div class="solution-card reveal tilt-card" data-delay="160" style="--glow: #2563eb">
+            <div class="sol-icon">🔬</div>
+            <h3>Data Intelligence</h3>
+            <p>Transform raw data chaos into structured, queryable intelligence with automated ETL, semantic search, and natural-language SQL.</p>
+            <div class="sol-tag">Learn more →</div>
+            <div class="sol-glow"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         PRICING
+    ============================================== -->
+    <section class="pricing section-gap" id="pricing">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-badge">Pricing</div>
+          <h2 class="section-title">Simple, <span class="gradient-text">transparent</span> pricing</h2>
+          <p class="section-sub">No hidden fees. No surprise overages. Scale up or down any time.</p>
+        </div>
+
+        <div class="pricing-toggle reveal">
+          <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+          <div class="toggle-switch" id="billingToggle">
+            <div class="toggle-knob"></div>
+          </div>
+          <span class="toggle-label" id="yearlyLabel">Yearly <span class="save-badge">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- Starter -->
+          <div class="pricing-card reveal" data-delay="0">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">
+              <span class="price-currency">$</span>
+              <span class="price-num" data-monthly="49" data-yearly="39">49</span>
+              <span class="price-period">/mo</span>
+            </div>
+            <p class="plan-desc">Perfect for small teams and solo operators getting started with AI automation.</p>
+            <ul class="plan-features">
+              <li><span class="check">✓</span> 5 AI agents</li>
+              <li><span class="check">✓</span> 10,000 automations/mo</li>
+              <li><span class="check">✓</span> 3 integrations</li>
+              <li><span class="check">✓</span> Basic analytics</li>
+              <li><span class="check">✓</span> Email support</li>
+              <li class="muted"><span>—</span> Custom AI models</li>
+              <li class="muted"><span>—</span> Enterprise security</li>
+            </ul>
+            <a href="#" class="plan-btn btn-outline-white">Get Started</a>
+          </div>
+
+          <!-- Pro — highlighted -->
+          <div class="pricing-card pro-card reveal" data-delay="80">
+            <div class="popular-badge">Most Popular</div>
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">
+              <span class="price-currency">$</span>
+              <span class="price-num" data-monthly="149" data-yearly="119">149</span>
+              <span class="price-period">/mo</span>
+            </div>
+            <p class="plan-desc">For growing teams that need full-stack AI power without enterprise complexity.</p>
+            <ul class="plan-features">
+              <li><span class="check">✓</span> 25 AI agents</li>
+              <li><span class="check">✓</span> 100,000 automations/mo</li>
+              <li><span class="check">✓</span> Unlimited integrations</li>
+              <li><span class="check">✓</span> Advanced analytics</li>
+              <li><span class="check">✓</span> Priority support</li>
+              <li><span class="check">✓</span> Custom AI models</li>
+              <li class="muted"><span>—</span> Enterprise security</li>
+            </ul>
+            <a href="#" class="plan-btn btn-primary glow-btn">Start Pro Trial</a>
+            <div class="pro-glow-ring"></div>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="pricing-card reveal" data-delay="160">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">
+              <span class="price-custom">Custom</span>
+            </div>
+            <p class="plan-desc">Dedicated infrastructure, SLAs, and white-glove onboarding for complex enterprise needs.</p>
+            <ul class="plan-features">
+              <li><span class="check">✓</span> Unlimited AI agents</li>
+              <li><span class="check">✓</span> Unlimited automations</li>
+              <li><span class="check">✓</span> All integrations</li>
+              <li><span class="check">✓</span> Custom dashboards</li>
+              <li><span class="check">✓</span> 24/7 dedicated support</li>
+              <li><span class="check">✓</span> Custom AI models</li>
+              <li><span class="check">✓</span> Enterprise security + SSO</li>
+            </ul>
+            <a href="#" class="plan-btn btn-outline-white">Talk to Sales</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         TESTIMONIALS
+    ============================================== -->
+    <section class="testimonials section-gap" id="testimonials">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-badge">Testimonials</div>
+          <h2 class="section-title">Teams love <span class="gradient-text">NeuroFlow</span></h2>
+          <p class="section-sub">Don't take our word for it — here's what operators and builders say after 90 days.</p>
+        </div>
+
+        <div class="testimonial-slider">
+          <div class="testimonial-track" id="testimonialTrack">
+
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">"NeuroFlow reduced our report generation time from 3 days to under 4 minutes. The AI just gets our business context without any hand-holding."</p>
+              <div class="testi-author">
+                <div class="author-avatar" style="--av-color: #7c3aed">SR</div>
+                <div>
+                  <div class="author-name">Sarah Ramos</div>
+                  <div class="author-role">VP of Operations, DataSphere</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">"We replaced four separate tools with NeuroFlow and cut our SaaS spend by 60%. The predictive analytics alone paid for three years of the subscription."</p>
+              <div class="testi-author">
+                <div class="author-avatar" style="--av-color: #06b6d4">MK</div>
+                <div>
+                  <div class="author-name">Marcus Kim</div>
+                  <div class="author-role">CTO, Vantage AI</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">"Our customer support resolution rate jumped from 54% to 91% in eight weeks. The AI agents are genuinely indistinguishable from our best reps."</p>
+              <div class="testi-author">
+                <div class="author-avatar" style="--av-color: #2563eb">JP</div>
+                <div>
+                  <div class="author-name">Julia Park</div>
+                  <div class="author-role">Head of CX, NovaTech</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">"I was skeptical about AI for our healthcare workflows. NeuroFlow's HIPAA compliance and audit trails gave us the confidence to fully automate triage."</p>
+              <div class="testi-author">
+                <div class="author-avatar" style="--av-color: #10b981">DT</div>
+                <div>
+                  <div class="author-name">Dr. David Torres</div>
+                  <div class="author-role">Chief Digital Officer, Quantum Labs</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">"The onboarding was shockingly smooth. Within 48 hours, our entire marketing pipeline was automated and we saw measurable ROI before the trial even ended."</p>
+              <div class="testi-author">
+                <div class="author-avatar" style="--av-color: #ec4899">AL</div>
+                <div>
+                  <div class="author-name">Aisha Lawson</div>
+                  <div class="author-role">CMO, Echo Finance</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn" id="prevBtn" aria-label="Previous">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn" id="nextBtn" aria-label="Next">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================
+         FAQ
+    ============================================== -->
+    <section class="faq section-gap" id="faq">
+      <div class="container container-narrow">
+
+        <div class="section-header reveal">
+          <div class="section-badge">FAQ</div>
+          <h2 class="section-title">Common <span class="gradient-text">questions</span></h2>
+          <p class="section-sub">Everything you need to know before making the switch.</p>
+        </div>
+
+        <div class="faq-list reveal">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How long does it take to set up NeuroFlow?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most teams are fully operational within 48 hours. Our visual connector handles integrations, and our AI is pre-trained on common business patterns — you just configure it for your specific context. Enterprise migrations typically take 1–2 weeks with white-glove support.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do I need a data science team to use NeuroFlow?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. NeuroFlow is designed for operators and business users, not data scientists. The platform handles model training, infrastructure, and optimization automatically. If you have a data team, they'll love the advanced API and fine-tuning controls — but they're not a prerequisite.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Where is my data stored, and is it used to train shared models?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Your data is stored in isolated, encrypted environments in your preferred region (US, EU, APAC). We never use customer data to train shared models. Each tenant's AI is completely private. Enterprise customers can opt for single-tenant deployments with dedicated infrastructure.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What integrations does NeuroFlow support?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We support 200+ native integrations including Salesforce, HubSpot, Slack, Notion, Jira, PostgreSQL, Snowflake, Google Workspace, Microsoft 365, Stripe, Shopify, and many more. We also offer a REST API and webhooks for custom integrations, plus a GraphQL API for Pro and Enterprise customers.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I switch plans or cancel at any time?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. You can upgrade, downgrade, or cancel at any time from your dashboard — no cancellation fees, no lock-in. Monthly plans cancel immediately with no further charges. Annual plans include a 30-day refund window.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is NeuroFlow compliant with GDPR, HIPAA, and SOC 2?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. NeuroFlow is SOC 2 Type II certified, GDPR compliant, and HIPAA-ready with signed BAAs available for healthcare customers. We undergo annual third-party security audits and maintain an active bug bounty program. Full compliance documentation is available on request.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         FINAL CTA
+    ============================================== -->
+    <section class="final-cta section-gap" id="contact">
+      <div class="cta-orb cta-orb1"></div>
+      <div class="cta-orb cta-orb2"></div>
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div class="section-badge">Get Started</div>
+          <h2 class="cta-headline">Build The Future<br><span class="gradient-text">With AI</span></h2>
+          <p class="cta-sub">Join 500+ enterprises automating their operations with NeuroFlow. Your first 14 days are completely free — no credit card required.</p>
+          <div class="cta-actions">
+            <a href="#" class="btn-primary glow-btn large-btn">
+              Start Free Trial
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#" class="btn-ghost-white">Talk to our team</a>
+          </div>
+          <p class="cta-footnote">14-day free trial · No credit card · Cancel anytime</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       FOOTER
+  ============================================== -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" style="margin-bottom:12px;display:inline-flex">
+            <span class="logo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="url(#fg1)" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M2 17l10 5 10-5" stroke="url(#fg1)" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M2 12l10 5 10-5" stroke="url(#fg1)" stroke-width="1.5" stroke-linejoin="round"/>
+                <defs><linearGradient id="fg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+              </svg>
+            </span>
+            <span class="logo-text">NeuroFlow <span class="logo-ai">AI</span></span>
+          </a>
+          <p class="footer-tagline">The intelligent operating system for modern enterprises. Automate. Predict. Scale.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Twitter/X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Discord">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.102 18.08.114 18.101.127 18.116a19.902 19.902 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#">Features</a>
+            <a href="#">Integrations</a>
+            <a href="#">Changelog</a>
+            <a href="#">Roadmap</a>
+            <a href="#">Status</a>
+          </div>
+          <div class="footer-col">
+            <h4>Solutions</h4>
+            <a href="#">Healthcare</a>
+            <a href="#">Finance</a>
+            <a href="#">Ecommerce</a>
+            <a href="#">Marketing</a>
+            <a href="#">Enterprise</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="#">Documentation</a>
+            <a href="#">API Reference</a>
+            <a href="#">Blog</a>
+            <a href="#">Community</a>
+            <a href="#">Support</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+            <a href="#">Security</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-newsletter reveal">
+        <div class="newsletter-text">
+          <h4>Stay in the loop</h4>
+          <p>Weekly insights on AI automation, product updates, and industry news.</p>
+        </div>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email" class="newsletter-input" aria-label="Email address" />
+          <button class="newsletter-btn btn-primary">Subscribe</button>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <p>© 2025 NeuroFlow AI, Inc. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
