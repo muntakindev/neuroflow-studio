@@ -12,17 +12,30 @@ document.addEventListener("DOMContentLoaded", () => {
   let mouseX = 0, mouseY = 0;
   let ringX  = 0, ringY  = 0;
 
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursorDot.style.left = mouseX + "px";
-    cursorDot.style.top  = mouseY + "px";
-  });
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  let needsCursorUpdate = false;
+
+  if (isTouchDevice) {
+    cursorDot.style.display = "none";
+    cursorRing.style.display = "none";
+  } else {
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      needsCursorUpdate = true;
+    });
+  }
 
   // Smooth trailing ring
   function animateRing() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
+    if (needsCursorUpdate) {
+      cursorDot.style.left = mouseX + "px";
+      cursorDot.style.top  = mouseY + "px";
+      needsCursorUpdate = false;
+    }
+
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
     cursorRing.style.left = ringX + "px";
     cursorRing.style.top  = ringY + "px";
     requestAnimationFrame(animateRing);
